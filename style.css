@@ -1,15 +1,70 @@
-.container-1, .container-2, .container-3, .container-4, .container-5 {
+.container-1, .container-2, .container-3, .container-4, .container-5, .container-6 {
     border: 1px solid black;
     width: 75%;
     margin: 0 auto;
     text-align: center;
+    background: url("./forwards.png");
+    padding: 30px;
+}
+
+
+
+input[type=number] {
+    width: 40%;
+    height: 10%;
+    font-family: Arial, sans-serif;
+    background: rgb(179, 31, 5);
+    color: blue;
+    outline: none;
+    font-size: 1cm;
+    text-align: center;
+    border: 2;
+}
+
+#farenheit {
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+::placeholder {
+    color: #ffffff;
+}
+
+::-webkit-input-placeholder { /* chrome/opera/safari */
+color: #ffffff
+}
+
+::-moz-placeholder { /* firefox */
+color: #ffffff;
+}
+
+::-ms-input-placeholder { /* edge */
+color: #ffffff;
+}
+
+.badge {
+    background: #e66357;
+    color: white;
+    padding: 5px 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.clock {
+    background: #EBEBEB;
+    text-align: center;
+    font-size: 55px;
+    height: 20%;
+    padding-top: 35px;
+    font-family: Arial;
+    border-radius: 4px;
+
 }
 
 
 
 
-.flex-box-container-1, .flex-box-container-2, .flex-box-rps, .flex-box-pick-color,
-.flex-blackjack-row-1, .flex-blackjack-row-2, .flex-blackjack-row-3 {
+.flex-box-container-1, .flex-box-container-2, .flex-box-rps, .flex-box-pick-color {
     display: flex;
     border: 1px solid black;
     padding: 10px;
@@ -18,10 +73,7 @@
     justify-content: space-around;
 }
 
-.flex-blackjack-row-1, .flex-blackjack-row-2 {
-    background: url('https://t4.ftcdn.net/jpg/03/62/05/31/240_F_362053188_oQ0WRHCFkIY4QlXS1S5d1i9bpYup67ll.jpg') center;
-    color: #ffffff;
-}
+
 
 .flex-blackjack-row-1 div {
     border: 1px solid black;
@@ -32,20 +84,6 @@
 
 }
 
-.flex-blackjack-row-1 img {
-    width: 25%;
-    padding: 10px;
-}
-
-.flex-blackjack-row-2 button {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.flex-blackjack-row-2 div {
-    border: 1px solid black;
-    padding: 10px;
-}
 
 table, th, td {
     padding: 5px;
@@ -84,4 +122,3 @@ table, th, td {
 
     
 
-/* style flex-box-rps divs */

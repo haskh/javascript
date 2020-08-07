@@ -1,10 +1,10 @@
-// Challenge 1: Your Age in Days
+// Mini-project 1: Your Age in Days
 
 function ageInDays() {
 var birthYear = prompt('What year were you born... Good friend?');
-var ageInDayss = (2020 - birthYear) * 365;
+var ageInDayss = (2020 - birthYear) * 52;
 var h1 = document.createElement('h1');
-var textAnswer = document.createTextNode('You are ' + ageInDayss + ' days old.')
+var textAnswer = document.createTextNode('You are ' + ageInDayss + ' weeks old.')
 h1.setAttribute('id', 'ageInDays');
 h1.appendChild(textAnswer);
 document.getElementById('flex-box-result').appendChild(h1);
@@ -14,7 +14,7 @@ function reset() {
     document.getElementById('ageInDays').remove();
 }
 
-// Challenge 2: Cat Generator
+// Mini-project 2: Cat Generator
 function generateCat() {
     var image = document.createElement('img');
     var div = document.getElementById('flex-cat-gen');
@@ -22,7 +22,7 @@ function generateCat() {
     div.appendChild(image);
 }
 
-// Challenge 3: Rock, Paper, Scissors
+// Mini-project 3: Rock, Paper, Scissors
 function rpsGame(yourChoice) {
     console.log(yourChoice);
     var humanChoice, botChoice;
@@ -95,7 +95,7 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
 }
 
 
-// Challenge 4: Change the Color of All Buttons
+// Mini-project 4: Change the Color of All Buttons
 var all_buttons = document.getElementsByTagName('button');
 
 
@@ -151,3 +151,79 @@ function randomColors() {
     }
 }
 
+
+//Mini-project 5: Digital active clock
+
+
+
+function clock() {
+    const fullDate = new Date();
+    var hours = fullDate.getHours();
+    var mins = fullDate.getMinutes();
+    var secs = fullDate.getSeconds();
+    
+    if (hours < 10) {
+        hours = "0" + hours;
+    } 
+    if (mins < 10) {
+        mins = "0" + mins;
+    } 
+    if (secs < 10) {
+        secs = "0" + secs;
+    } 
+    document.getElementById('hour').innerHTML = hours;
+    document.getElementById('minute').innerHTML =":" + mins;
+    document.getElementById('second').innerHTML =":" + secs;
+}
+setInterval(clock, 100);
+
+//Mini-project 6: Temperature Converter
+
+const celciusInput = document.querySelector('#celcius > input');
+const fahrenheitInput = document.querySelector('#fahrenheit > input');
+const kelvinInput = document.querySelector('#kelvin > input');
+
+function roundNum(num) {
+    return Math.round(num*100)/100;
+}
+// ^^^ e.g. 4.923834984772
+// * 100 V
+// 492.3834984772
+// rounded V
+// 492
+// rounded V
+// 4.92
+
+function celciusToFahrenheitAndKelvin() {
+    const cTemp = parseFloat (celciusInput.value);
+    const fTemp = (cTemp * (9/5)) + 32;
+    const kTemp = cTemp + 273.15;
+    fahrenheitInput.value = roundNum(fTemp);
+    kelvinInput.value = roundNum(kTemp);
+ }
+
+ function fahrenheitToCelciusAndKelvin() {
+     const fTemp = parseFloat(fahrenheitInput.value);
+     const cTemp = (fTemp - 32) * (5/9);
+     const kTemp = (fTemp + 459.67) * 5/9;
+     celciusInput.value = roundNum(cTemp);
+     kelvinInput.value = roundNum(kTemp);
+ }
+
+
+ function kelvinToCelciusAndFahrenheit() {
+   const kTemp = parseFloat(kelvinInput.value);
+   const cTemp = kTemp - 273.15;
+   const fTemp = 9/5 * (kTemp - 273) + 32;
+   celciusInput.value = roundNum(cTemp);
+   fahrenheitInput.value = roundNum(fTemp);
+}
+
+function main() {
+
+celciusInput.addEventListener('input', celciusToFahrenheitAndKelvin);
+fahrenheitInput.addEventListener('input', fahrenheitToCelciusAndKelvin);
+kelvinInput.addEventListener('input', kelvinToCelciusAndFahrenheit);
+}
+
+main();
